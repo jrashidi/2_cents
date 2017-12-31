@@ -1,0 +1,1665 @@
+{
+  "contractName": "ExternalStorage",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "users",
+      "outputs": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "picture",
+          "type": "string"
+        },
+        {
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "name": "_description",
+          "type": "string"
+        },
+        {
+          "name": "_picture",
+          "type": "string"
+        }
+      ],
+      "name": "createUser",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "UserIndexToOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "ArticleIndexToOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_UserId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getUser",
+      "outputs": [
+        {
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "name": "_description",
+          "type": "string"
+        },
+        {
+          "name": "_picture",
+          "type": "string"
+        },
+        {
+          "name": "_index",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "articles",
+      "outputs": [
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "body",
+          "type": "string"
+        },
+        {
+          "name": "genre",
+          "type": "string"
+        },
+        {
+          "name": "picture",
+          "type": "string"
+        },
+        {
+          "name": "likes",
+          "type": "uint256"
+        },
+        {
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6060604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610f77806100536000396000f30060606040526004361061008e576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063365b98b21461009357806359ae069b1461026557806362a35c5b1461034857806387f2f478146103955780638da5cb5b146103e2578063b0467deb14610437578063edcfafe6146105b2578063f2fde38b14610814575b600080fd5b341561009e57600080fd5b6100b4600480803590602001909190505061084d565b6040518080602001806020018060200185815260200184810384528881815460018160011615610100020316600290048152602001915080546001816001161561010002031660029004801561014b5780601f106101205761010080835404028352916020019161014b565b820191906000526020600020905b81548152906001019060200180831161012e57829003601f168201915b50508481038352878181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156101ce5780601f106101a3576101008083540402835291602001916101ce565b820191906000526020600020905b8154815290600101906020018083116101b157829003601f168201915b50508481038252868181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156102515780601f1061022657610100808354040283529160200191610251565b820191906000526020600020905b81548152906001019060200180831161023457829003601f168201915b505097505050505050505060405180910390f35b341561027057600080fd5b610346600480803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091905050610889565b005b341561035357600080fd5b61037f600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610997565b6040518082815260200191505060405180910390f35b34156103a057600080fd5b6103cc600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506109af565b6040518082815260200191505060405180910390f35b34156103ed57600080fd5b6103f56109c7565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561044257600080fd5b61045860048080359060200190919050506109ec565b60405180806020018060200180602001858152602001848103845288818151815260200191508051906020019080838360005b838110156104a657808201518184015260208101905061048b565b50505050905090810190601f1680156104d35780820380516001836020036101000a031916815260200191505b50848103835287818151815260200191508051906020019080838360005b8381101561050c5780820151818401526020810190506104f1565b50505050905090810190601f1680156105395780820380516001836020036101000a031916815260200191505b50848103825286818151815260200191508051906020019080838360005b83811015610572578082015181840152602081019050610557565b50505050905090810190601f16801561059f5780820380516001836020036101000a031916815260200191505b5097505050505050505060405180910390f35b34156105bd57600080fd5b6105d36004808035906020019091905050610c56565b604051808060200180602001806020018060200187815260200186815260200185810385528b8181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156106745780601f1061064957610100808354040283529160200191610674565b820191906000526020600020905b81548152906001019060200180831161065757829003601f168201915b505085810384528a8181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156106f75780601f106106cc576101008083540402835291602001916106f7565b820191906000526020600020905b8154815290600101906020018083116106da57829003601f168201915b505085810383528981815460018160011615610100020316600290048152602001915080546001816001161561010002031660029004801561077a5780601f1061074f5761010080835404028352916020019161077a565b820191906000526020600020905b81548152906001019060200180831161075d57829003601f168201915b50508581038252888181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156107fd5780601f106107d2576101008083540402835291602001916107fd565b820191906000526020600020905b8154815290600101906020018083116107e057829003601f168201915b50509a505050505050505050505060405180910390f35b341561081f57600080fd5b61084b600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610c9d565b005b60018181548110151561085c57fe5b90600052602060002090600402016000915090508060000190806001019080600201908060030154905084565b600360008154809291906001019190505550600180548060010182816108af9190610d72565b9160005260206000209060040201600060806040519081016040528087815260200186815260200185815260200160035481525090919091506000820151816000019080519060200190610904929190610da4565b506020820151816001019080519060200190610921929190610da4565b50604082015181600201908051906020019061093e929190610da4565b5060608201518160030155505050600354600560003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550505050565b60056020528060005260406000206000915090505481565b60066020528060005260406000206000915090505481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6109f4610e24565b6109fc610e24565b610a04610e24565b6000610a0e610e38565b600186815481101515610a1d57fe5b906000526020600020906004020160806040519081016040529081600082018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610ad05780601f10610aa557610100808354040283529160200191610ad0565b820191906000526020600020905b815481529060010190602001808311610ab357829003601f168201915b50505050508152602001600182018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610b725780601f10610b4757610100808354040283529160200191610b72565b820191906000526020600020905b815481529060010190602001808311610b5557829003601f168201915b50505050508152602001600282018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610c145780601f10610be957610100808354040283529160200191610c14565b820191906000526020600020905b815481529060010190602001808311610bf757829003601f168201915b50505050508152602001600382015481525050905080600001518160200151826040015183606001518393508292508191509450945094509450509193509193565b600281815481101515610c6557fe5b906000526020600020906006020160009150905080600001908060010190806002019080600301908060040154908060050154905086565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610cf857600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515610d6f57806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b815481835581811511610d9f57600402816004028360005260206000209182019101610d9e9190610e73565b5b505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610de557805160ff1916838001178555610e13565b82800160010185558215610e13579182015b82811115610e12578251825591602001919060010190610df7565b5b509050610e209190610eca565b5090565b602060405190810160405280600081525090565b608060405190810160405280610e4c610eef565b8152602001610e59610eef565b8152602001610e66610eef565b8152602001600081525090565b610ec791905b80821115610ec35760008082016000610e929190610f03565b600182016000610ea29190610f03565b600282016000610eb29190610f03565b600382016000905550600401610e79565b5090565b90565b610eec91905b80821115610ee8576000816000905550600101610ed0565b5090565b90565b602060405190810160405280600081525090565b50805460018160011615610100020316600290046000825580601f10610f295750610f48565b601f016020900490600052602060002090810190610f479190610eca565b5b505600a165627a7a723058209eebda7b2189542d37d6ef8de184a80d20a3dda13d962b10367a2cd0dcd3aff20029",
+  "deployedBytecode": "0x60606040526004361061008e576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063365b98b21461009357806359ae069b1461026557806362a35c5b1461034857806387f2f478146103955780638da5cb5b146103e2578063b0467deb14610437578063edcfafe6146105b2578063f2fde38b14610814575b600080fd5b341561009e57600080fd5b6100b4600480803590602001909190505061084d565b6040518080602001806020018060200185815260200184810384528881815460018160011615610100020316600290048152602001915080546001816001161561010002031660029004801561014b5780601f106101205761010080835404028352916020019161014b565b820191906000526020600020905b81548152906001019060200180831161012e57829003601f168201915b50508481038352878181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156101ce5780601f106101a3576101008083540402835291602001916101ce565b820191906000526020600020905b8154815290600101906020018083116101b157829003601f168201915b50508481038252868181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156102515780601f1061022657610100808354040283529160200191610251565b820191906000526020600020905b81548152906001019060200180831161023457829003601f168201915b505097505050505050505060405180910390f35b341561027057600080fd5b610346600480803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091905050610889565b005b341561035357600080fd5b61037f600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610997565b6040518082815260200191505060405180910390f35b34156103a057600080fd5b6103cc600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506109af565b6040518082815260200191505060405180910390f35b34156103ed57600080fd5b6103f56109c7565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561044257600080fd5b61045860048080359060200190919050506109ec565b60405180806020018060200180602001858152602001848103845288818151815260200191508051906020019080838360005b838110156104a657808201518184015260208101905061048b565b50505050905090810190601f1680156104d35780820380516001836020036101000a031916815260200191505b50848103835287818151815260200191508051906020019080838360005b8381101561050c5780820151818401526020810190506104f1565b50505050905090810190601f1680156105395780820380516001836020036101000a031916815260200191505b50848103825286818151815260200191508051906020019080838360005b83811015610572578082015181840152602081019050610557565b50505050905090810190601f16801561059f5780820380516001836020036101000a031916815260200191505b5097505050505050505060405180910390f35b34156105bd57600080fd5b6105d36004808035906020019091905050610c56565b604051808060200180602001806020018060200187815260200186815260200185810385528b8181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156106745780601f1061064957610100808354040283529160200191610674565b820191906000526020600020905b81548152906001019060200180831161065757829003601f168201915b505085810384528a8181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156106f75780601f106106cc576101008083540402835291602001916106f7565b820191906000526020600020905b8154815290600101906020018083116106da57829003601f168201915b505085810383528981815460018160011615610100020316600290048152602001915080546001816001161561010002031660029004801561077a5780601f1061074f5761010080835404028352916020019161077a565b820191906000526020600020905b81548152906001019060200180831161075d57829003601f168201915b50508581038252888181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156107fd5780601f106107d2576101008083540402835291602001916107fd565b820191906000526020600020905b8154815290600101906020018083116107e057829003601f168201915b50509a505050505050505050505060405180910390f35b341561081f57600080fd5b61084b600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610c9d565b005b60018181548110151561085c57fe5b90600052602060002090600402016000915090508060000190806001019080600201908060030154905084565b600360008154809291906001019190505550600180548060010182816108af9190610d72565b9160005260206000209060040201600060806040519081016040528087815260200186815260200185815260200160035481525090919091506000820151816000019080519060200190610904929190610da4565b506020820151816001019080519060200190610921929190610da4565b50604082015181600201908051906020019061093e929190610da4565b5060608201518160030155505050600354600560003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550505050565b60056020528060005260406000206000915090505481565b60066020528060005260406000206000915090505481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6109f4610e24565b6109fc610e24565b610a04610e24565b6000610a0e610e38565b600186815481101515610a1d57fe5b906000526020600020906004020160806040519081016040529081600082018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610ad05780601f10610aa557610100808354040283529160200191610ad0565b820191906000526020600020905b815481529060010190602001808311610ab357829003601f168201915b50505050508152602001600182018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610b725780601f10610b4757610100808354040283529160200191610b72565b820191906000526020600020905b815481529060010190602001808311610b5557829003601f168201915b50505050508152602001600282018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610c145780601f10610be957610100808354040283529160200191610c14565b820191906000526020600020905b815481529060010190602001808311610bf757829003601f168201915b50505050508152602001600382015481525050905080600001518160200151826040015183606001518393508292508191509450945094509450509193509193565b600281815481101515610c6557fe5b906000526020600020906006020160009150905080600001908060010190806002019080600301908060040154908060050154905086565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610cf857600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515610d6f57806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b815481835581811511610d9f57600402816004028360005260206000209182019101610d9e9190610e73565b5b505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610de557805160ff1916838001178555610e13565b82800160010185558215610e13579182015b82811115610e12578251825591602001919060010190610df7565b5b509050610e209190610eca565b5090565b602060405190810160405280600081525090565b608060405190810160405280610e4c610eef565b8152602001610e59610eef565b8152602001610e66610eef565b8152602001600081525090565b610ec791905b80821115610ec35760008082016000610e929190610f03565b600182016000610ea29190610f03565b600282016000610eb29190610f03565b600382016000905550600401610e79565b5090565b90565b610eec91905b80821115610ee8576000816000905550600101610ed0565b5090565b90565b602060405190810160405280600081525090565b50805460018160011615610100020316600290046000825580601f10610f295750610f48565b601f016020900490600052602060002090810190610f479190610eca565b5b505600a165627a7a723058209eebda7b2189542d37d6ef8de184a80d20a3dda13d962b10367a2cd0dcd3aff20029",
+  "sourceMap": "49:3078:0:-;;;103:10:1;95:5;;:18;;;;;;;;;;;;;;;;;;49:3078:0;;;;;;",
+  "deployedSourceMap": "49:3078:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;521:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;790:409;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;680:49;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;733:52;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;45:20:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1723:302:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;544:25:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;193:124:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;521:19:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;790:409::-;1026:11;;:13;;;;;;;;;;;;;1045:5;:60;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;1056:48;;;;;;;;;1061:5;1056:48;;;;1068:12;1056:48;;;;1082:8;1056:48;;;;1092:11;;1056:48;;;1045:60;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;1183:11;;1152:16;:28;1169:10;1152:28;;;;;;;;;;;;;;;:42;;;;790:409;;;:::o;680:49::-;;;;;;;;;;;;;;;;;:::o;733:52::-;;;;;;;;;;;;;;;;;:::o;45:20:1:-;;;;;;;;;;;;;:::o;1723:302:0:-;1779:12;;:::i;:::-;1793:19;;:::i;:::-;1814:15;;:::i;:::-;1831:11;1899:13;;:::i;:::-;1915:5;1921:7;1915:14;;;;;;;;;;;;;;;;;;;;1899:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1978:1;:6;;;1986:1;:13;;;2001:1;:9;;;2012:1;:7;;;1971:49;;;;;;;;;;;;;;;;;1723:302;;;;;;:::o;544:25::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;193:124:1:-;171:5;;;;;;;;;;;157:19;;:10;:19;;;149:28;;;;;;;;278:1;258:22;;:8;:22;;;;254:59;;;298:8;290:5;;:16;;;;;;;;;;;;;;;;;;254:59;193:124;:::o;49:3078:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;:::i;:::-;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o",
+  "source": "pragma solidity^0.4.2;\n\nimport \"./Ownable.sol\";\n\ncontract ExternalStorage is Ownable {\n\n  //Events for contracts\n\n  //We are creating the data structure for a new user\n  struct User {\n    string name;\n    string description;\n    string picture;\n    uint index;\n  }\n\n  //We are creating the data structure for a new article\n  struct Article {\n    string title;\n    string body;\n    string genre;\n    string picture;\n    uint likes;\n    uint index;\n  }\n\n  //arrays where we will store the stuct of the users and articles\n  User[] public users;\n  Article[] public articles;\n  uint userCounter;\n  uint articleCounter;\n\n  //mapping the owner of the user and the owner of the article\n  mapping (address => uint) public UserIndexToOwner;\n  mapping (address => uint) public ArticleIndexToOwner;\n\n  function createUser(string _name, string _description, string _picture) public {\n    //making sure that the owner only has one account\n    /* require(UserIndexToOwner[msg.sender] == 0); */\n    //setting array index for the new user\n    userCounter++;\n    users.push(User(_name, _description, _picture, userCounter));\n    //mapping the new user to the sender\n    UserIndexToOwner[msg.sender] = userCounter;\n  }\n\n  /* function createArticle(string _title, string _body, string _genre, string _picture) public {\n    //initializing likes to 0\n    uint _likes = 0;\n    uint _index;\n    if (ArticleIndexToOwner.length == 0) {\n      _index = 0;\n    } else {\n      _index = ArticleIndexToOwner.length;\n    }\n    //setting array index for the new article\n    uint id = articles.push(Article(_title, _body, _genre, _picture, _likes, _index));\n    //mapping the new article to the sender\n    ArticleIndexToOwner[_index] = msg.sender;\n  } */\n\n  function getUser(uint _UserId) public constant returns (string _name, string _description, string _picture, uint _index) {\n    //get user from array and store it to memory\n    User memory u = users[_UserId];\n    //return the values of the user\n    return(u.name, u.description, u.picture, u.index);\n  }\n\n  /* function editUser(uint _UserId, string _name, string _description, string _picture) public {\n    //check to see that sender is ther user\n    require(UserIndexToOwner[_UserId] == msg.sender);\n    User u = users[_UserId];\n    u.name = _name;\n    u.description = _description;\n    u.picture = _picture;\n  }\n\n  function deleteUser(uint _UserId) public{\n    //check to see that sender is ther user\n    require(UserIndexToOwner[_UserId] == msg.sender);\n    //delete the user\n    delete users[_UserId];\n  }\n\n  function getArticle(uint _ArticleId) public constant {\n    Article memory a = articles[_ArticleId];\n  }\n\n  function editArticle(uint _ArticleId) public {\n    Article memory a = articles[_ArticleId];\n  }\n\n  function deleteArticle(uint _ArticleId) public {\n    Article memory a = articles[_ArticleId];\n  } */\n\n  //OnlyOwner Functions\n  /* function numberOfUsers() public onlyOwner returns (uint number) {\n    uint number = users.length;\n    return number;\n  }\n\n  function numberofArticle() public onlyOwner returns (uint number) {\n    uint number = articles.length;\n    return number;\n  } */\n\n}\n",
+  "sourcePath": "/Users/Justin/Desktop/2_cents/contracts/ExternalStorage.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/Users/Justin/Desktop/2_cents/contracts/ExternalStorage.sol",
+      "exportedSymbols": {
+        "ExternalStorage": [
+          106
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".2"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "0:22:0"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 151,
+          "absolutePath": "/Users/Justin/Desktop/2_cents/contracts/Ownable.sol",
+          "file": "./Ownable.sol",
+          "scope": 107,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2,
+        "name": "ImportDirective",
+        "src": "24:23:0"
+      },
+      {
+        "attributes": {
+          "contractDependencies": [
+            150
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            106,
+            150
+          ],
+          "name": "ExternalStorage",
+          "scope": 107
+        },
+        "children": [
+          {
+            "attributes": {
+              "arguments": [
+                null
+              ]
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Ownable",
+                  "referencedDeclaration": 150,
+                  "type": "contract Ownable"
+                },
+                "id": 3,
+                "name": "UserDefinedTypeName",
+                "src": "77:7:0"
+              }
+            ],
+            "id": 4,
+            "name": "InheritanceSpecifier",
+            "src": "77:7:0"
+          },
+          {
+            "attributes": {
+              "canonicalName": "ExternalStorage.User",
+              "name": "User",
+              "scope": 106,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "name",
+                  "scope": 13,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string storage pointer",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 5,
+                    "name": "ElementaryTypeName",
+                    "src": "188:6:0"
+                  }
+                ],
+                "id": 6,
+                "name": "VariableDeclaration",
+                "src": "188:11:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "description",
+                  "scope": 13,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string storage pointer",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 7,
+                    "name": "ElementaryTypeName",
+                    "src": "205:6:0"
+                  }
+                ],
+                "id": 8,
+                "name": "VariableDeclaration",
+                "src": "205:18:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "picture",
+                  "scope": 13,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string storage pointer",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 9,
+                    "name": "ElementaryTypeName",
+                    "src": "229:6:0"
+                  }
+                ],
+                "id": 10,
+                "name": "VariableDeclaration",
+                "src": "229:14:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "index",
+                  "scope": 13,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 11,
+                    "name": "ElementaryTypeName",
+                    "src": "249:4:0"
+                  }
+                ],
+                "id": 12,
+                "name": "VariableDeclaration",
+                "src": "249:10:0"
+              }
+            ],
+            "id": 13,
+            "name": "StructDefinition",
+            "src": "170:94:0"
+          },
+          {
+            "attributes": {
+              "canonicalName": "ExternalStorage.Article",
+              "name": "Article",
+              "scope": 106,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "title",
+                  "scope": 26,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string storage pointer",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 14,
+                    "name": "ElementaryTypeName",
+                    "src": "346:6:0"
+                  }
+                ],
+                "id": 15,
+                "name": "VariableDeclaration",
+                "src": "346:12:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "body",
+                  "scope": 26,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string storage pointer",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 16,
+                    "name": "ElementaryTypeName",
+                    "src": "364:6:0"
+                  }
+                ],
+                "id": 17,
+                "name": "VariableDeclaration",
+                "src": "364:11:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "genre",
+                  "scope": 26,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string storage pointer",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 18,
+                    "name": "ElementaryTypeName",
+                    "src": "381:6:0"
+                  }
+                ],
+                "id": 19,
+                "name": "VariableDeclaration",
+                "src": "381:12:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "picture",
+                  "scope": 26,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string storage pointer",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 20,
+                    "name": "ElementaryTypeName",
+                    "src": "399:6:0"
+                  }
+                ],
+                "id": 21,
+                "name": "VariableDeclaration",
+                "src": "399:14:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "likes",
+                  "scope": 26,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 22,
+                    "name": "ElementaryTypeName",
+                    "src": "419:4:0"
+                  }
+                ],
+                "id": 23,
+                "name": "VariableDeclaration",
+                "src": "419:10:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "index",
+                  "scope": 26,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 24,
+                    "name": "ElementaryTypeName",
+                    "src": "435:4:0"
+                  }
+                ],
+                "id": 25,
+                "name": "VariableDeclaration",
+                "src": "435:10:0"
+              }
+            ],
+            "id": 26,
+            "name": "StructDefinition",
+            "src": "325:125:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "users",
+              "scope": 106,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct ExternalStorage.User storage ref[] storage ref",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "length": null,
+                  "type": "struct ExternalStorage.User storage ref[] storage pointer"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "User",
+                      "referencedDeclaration": 13,
+                      "type": "struct ExternalStorage.User storage pointer"
+                    },
+                    "id": 27,
+                    "name": "UserDefinedTypeName",
+                    "src": "521:4:0"
+                  }
+                ],
+                "id": 28,
+                "name": "ArrayTypeName",
+                "src": "521:6:0"
+              }
+            ],
+            "id": 29,
+            "name": "VariableDeclaration",
+            "src": "521:19:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "articles",
+              "scope": 106,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct ExternalStorage.Article storage ref[] storage ref",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "length": null,
+                  "type": "struct ExternalStorage.Article storage ref[] storage pointer"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Article",
+                      "referencedDeclaration": 26,
+                      "type": "struct ExternalStorage.Article storage pointer"
+                    },
+                    "id": 30,
+                    "name": "UserDefinedTypeName",
+                    "src": "544:7:0"
+                  }
+                ],
+                "id": 31,
+                "name": "ArrayTypeName",
+                "src": "544:9:0"
+              }
+            ],
+            "id": 32,
+            "name": "VariableDeclaration",
+            "src": "544:25:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "userCounter",
+              "scope": 106,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 33,
+                "name": "ElementaryTypeName",
+                "src": "573:4:0"
+              }
+            ],
+            "id": 34,
+            "name": "VariableDeclaration",
+            "src": "573:16:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "articleCounter",
+              "scope": 106,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 35,
+                "name": "ElementaryTypeName",
+                "src": "593:4:0"
+              }
+            ],
+            "id": 36,
+            "name": "VariableDeclaration",
+            "src": "593:19:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "UserIndexToOwner",
+              "scope": 106,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(address => uint256)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(address => uint256)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 37,
+                    "name": "ElementaryTypeName",
+                    "src": "689:7:0"
+                  },
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 38,
+                    "name": "ElementaryTypeName",
+                    "src": "700:4:0"
+                  }
+                ],
+                "id": 39,
+                "name": "Mapping",
+                "src": "680:25:0"
+              }
+            ],
+            "id": 40,
+            "name": "VariableDeclaration",
+            "src": "680:49:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "ArticleIndexToOwner",
+              "scope": 106,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(address => uint256)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(address => uint256)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 41,
+                    "name": "ElementaryTypeName",
+                    "src": "742:7:0"
+                  },
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 42,
+                    "name": "ElementaryTypeName",
+                    "src": "753:4:0"
+                  }
+                ],
+                "id": 43,
+                "name": "Mapping",
+                "src": "733:25:0"
+              }
+            ],
+            "id": 44,
+            "name": "VariableDeclaration",
+            "src": "733:52:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "createUser",
+              "payable": false,
+              "scope": 106,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_name",
+                      "scope": 75,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 45,
+                        "name": "ElementaryTypeName",
+                        "src": "810:6:0"
+                      }
+                    ],
+                    "id": 46,
+                    "name": "VariableDeclaration",
+                    "src": "810:12:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_description",
+                      "scope": 75,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 47,
+                        "name": "ElementaryTypeName",
+                        "src": "824:6:0"
+                      }
+                    ],
+                    "id": 48,
+                    "name": "VariableDeclaration",
+                    "src": "824:19:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_picture",
+                      "scope": 75,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 49,
+                        "name": "ElementaryTypeName",
+                        "src": "845:6:0"
+                      }
+                    ],
+                    "id": 50,
+                    "name": "VariableDeclaration",
+                    "src": "845:15:0"
+                  }
+                ],
+                "id": 51,
+                "name": "ParameterList",
+                "src": "809:52:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 52,
+                "name": "ParameterList",
+                "src": "869:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "++",
+                          "prefix": false,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 34,
+                              "type": "uint256",
+                              "value": "userCounter"
+                            },
+                            "id": 53,
+                            "name": "Identifier",
+                            "src": "1026:11:0"
+                          }
+                        ],
+                        "id": 54,
+                        "name": "UnaryOperation",
+                        "src": "1026:13:0"
+                      }
+                    ],
+                    "id": 55,
+                    "name": "ExpressionStatement",
+                    "src": "1026:13:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_struct$_User_$13_memory",
+                                  "typeString": "struct ExternalStorage.User memory"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "push",
+                              "referencedDeclaration": null,
+                              "type": "function (struct ExternalStorage.User storage ref) returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 29,
+                                  "type": "struct ExternalStorage.User storage ref[] storage ref",
+                                  "value": "users"
+                                },
+                                "id": 56,
+                                "name": "Identifier",
+                                "src": "1045:5:0"
+                              }
+                            ],
+                            "id": 58,
+                            "name": "MemberAccess",
+                            "src": "1045:10:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": true,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "struct ExternalStorage.User memory",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 13,
+                                  "type": "type(struct ExternalStorage.User storage pointer)",
+                                  "value": "User"
+                                },
+                                "id": 59,
+                                "name": "Identifier",
+                                "src": "1056:4:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 46,
+                                  "type": "string memory",
+                                  "value": "_name"
+                                },
+                                "id": 60,
+                                "name": "Identifier",
+                                "src": "1061:5:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 48,
+                                  "type": "string memory",
+                                  "value": "_description"
+                                },
+                                "id": 61,
+                                "name": "Identifier",
+                                "src": "1068:12:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 50,
+                                  "type": "string memory",
+                                  "value": "_picture"
+                                },
+                                "id": 62,
+                                "name": "Identifier",
+                                "src": "1082:8:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 34,
+                                  "type": "uint256",
+                                  "value": "userCounter"
+                                },
+                                "id": 63,
+                                "name": "Identifier",
+                                "src": "1092:11:0"
+                              }
+                            ],
+                            "id": 64,
+                            "name": "FunctionCall",
+                            "src": "1056:48:0"
+                          }
+                        ],
+                        "id": 65,
+                        "name": "FunctionCall",
+                        "src": "1045:60:0"
+                      }
+                    ],
+                    "id": 66,
+                    "name": "ExpressionStatement",
+                    "src": "1045:60:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 40,
+                                  "type": "mapping(address => uint256)",
+                                  "value": "UserIndexToOwner"
+                                },
+                                "id": 67,
+                                "name": "Identifier",
+                                "src": "1152:16:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "sender",
+                                  "referencedDeclaration": null,
+                                  "type": "address"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 162,
+                                      "type": "msg",
+                                      "value": "msg"
+                                    },
+                                    "id": 68,
+                                    "name": "Identifier",
+                                    "src": "1169:3:0"
+                                  }
+                                ],
+                                "id": 69,
+                                "name": "MemberAccess",
+                                "src": "1169:10:0"
+                              }
+                            ],
+                            "id": 70,
+                            "name": "IndexAccess",
+                            "src": "1152:28:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 34,
+                              "type": "uint256",
+                              "value": "userCounter"
+                            },
+                            "id": 71,
+                            "name": "Identifier",
+                            "src": "1183:11:0"
+                          }
+                        ],
+                        "id": 72,
+                        "name": "Assignment",
+                        "src": "1152:42:0"
+                      }
+                    ],
+                    "id": 73,
+                    "name": "ExpressionStatement",
+                    "src": "1152:42:0"
+                  }
+                ],
+                "id": 74,
+                "name": "Block",
+                "src": "869:330:0"
+              }
+            ],
+            "id": 75,
+            "name": "FunctionDefinition",
+            "src": "790:409:0"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getUser",
+              "payable": false,
+              "scope": 106,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_UserId",
+                      "scope": 105,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 76,
+                        "name": "ElementaryTypeName",
+                        "src": "1740:4:0"
+                      }
+                    ],
+                    "id": 77,
+                    "name": "VariableDeclaration",
+                    "src": "1740:12:0"
+                  }
+                ],
+                "id": 78,
+                "name": "ParameterList",
+                "src": "1739:14:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_name",
+                      "scope": 105,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 79,
+                        "name": "ElementaryTypeName",
+                        "src": "1779:6:0"
+                      }
+                    ],
+                    "id": 80,
+                    "name": "VariableDeclaration",
+                    "src": "1779:12:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_description",
+                      "scope": 105,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 81,
+                        "name": "ElementaryTypeName",
+                        "src": "1793:6:0"
+                      }
+                    ],
+                    "id": 82,
+                    "name": "VariableDeclaration",
+                    "src": "1793:19:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_picture",
+                      "scope": 105,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 83,
+                        "name": "ElementaryTypeName",
+                        "src": "1814:6:0"
+                      }
+                    ],
+                    "id": 84,
+                    "name": "VariableDeclaration",
+                    "src": "1814:15:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_index",
+                      "scope": 105,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 85,
+                        "name": "ElementaryTypeName",
+                        "src": "1831:4:0"
+                      }
+                    ],
+                    "id": 86,
+                    "name": "VariableDeclaration",
+                    "src": "1831:11:0"
+                  }
+                ],
+                "id": 87,
+                "name": "ParameterList",
+                "src": "1778:65:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        89
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "u",
+                          "scope": 105,
+                          "stateVariable": false,
+                          "storageLocation": "memory",
+                          "type": "struct ExternalStorage.User memory",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "User",
+                              "referencedDeclaration": 13,
+                              "type": "struct ExternalStorage.User storage pointer"
+                            },
+                            "id": 88,
+                            "name": "UserDefinedTypeName",
+                            "src": "1899:4:0"
+                          }
+                        ],
+                        "id": 89,
+                        "name": "VariableDeclaration",
+                        "src": "1899:13:0"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "struct ExternalStorage.User storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 29,
+                              "type": "struct ExternalStorage.User storage ref[] storage ref",
+                              "value": "users"
+                            },
+                            "id": 90,
+                            "name": "Identifier",
+                            "src": "1915:5:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 77,
+                              "type": "uint256",
+                              "value": "_UserId"
+                            },
+                            "id": 91,
+                            "name": "Identifier",
+                            "src": "1921:7:0"
+                          }
+                        ],
+                        "id": 92,
+                        "name": "IndexAccess",
+                        "src": "1915:14:0"
+                      }
+                    ],
+                    "id": 93,
+                    "name": "VariableDeclarationStatement",
+                    "src": "1899:30:0"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 87
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "tuple(string memory,string memory,string memory,uint256)"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "name",
+                              "referencedDeclaration": 6,
+                              "type": "string memory"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 89,
+                                  "type": "struct ExternalStorage.User memory",
+                                  "value": "u"
+                                },
+                                "id": 94,
+                                "name": "Identifier",
+                                "src": "1978:1:0"
+                              }
+                            ],
+                            "id": 95,
+                            "name": "MemberAccess",
+                            "src": "1978:6:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "description",
+                              "referencedDeclaration": 8,
+                              "type": "string memory"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 89,
+                                  "type": "struct ExternalStorage.User memory",
+                                  "value": "u"
+                                },
+                                "id": 96,
+                                "name": "Identifier",
+                                "src": "1986:1:0"
+                              }
+                            ],
+                            "id": 97,
+                            "name": "MemberAccess",
+                            "src": "1986:13:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "picture",
+                              "referencedDeclaration": 10,
+                              "type": "string memory"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 89,
+                                  "type": "struct ExternalStorage.User memory",
+                                  "value": "u"
+                                },
+                                "id": 98,
+                                "name": "Identifier",
+                                "src": "2001:1:0"
+                              }
+                            ],
+                            "id": 99,
+                            "name": "MemberAccess",
+                            "src": "2001:9:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "index",
+                              "referencedDeclaration": 12,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 89,
+                                  "type": "struct ExternalStorage.User memory",
+                                  "value": "u"
+                                },
+                                "id": 100,
+                                "name": "Identifier",
+                                "src": "2012:1:0"
+                              }
+                            ],
+                            "id": 101,
+                            "name": "MemberAccess",
+                            "src": "2012:7:0"
+                          }
+                        ],
+                        "id": 102,
+                        "name": "TupleExpression",
+                        "src": "1977:43:0"
+                      }
+                    ],
+                    "id": 103,
+                    "name": "Return",
+                    "src": "1971:49:0"
+                  }
+                ],
+                "id": 104,
+                "name": "Block",
+                "src": "1844:181:0"
+              }
+            ],
+            "id": 105,
+            "name": "FunctionDefinition",
+            "src": "1723:302:0"
+          }
+        ],
+        "id": 106,
+        "name": "ContractDefinition",
+        "src": "49:3078:0"
+      }
+    ],
+    "id": 107,
+    "name": "SourceUnit",
+    "src": "0:3128:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {
+    "1514647585199": {
+      "events": {},
+      "links": {},
+      "address": "0x075dd3eba3457ec6d3c6f334b02826443b92c291"
+    },
+    "1514672216848": {
+      "events": {},
+      "links": {},
+      "address": "0x552f39610bab83a2f7345fe2583a50dee330ba3f"
+    },
+    "1514672740742": {
+      "events": {},
+      "links": {},
+      "address": "0x1fbd9e88837f72eaa4e65a5037a2c803251e18ce"
+    },
+    "1514724508565": {
+      "events": {},
+      "links": {},
+      "address": "0x30a29fdf07e3f5cf7673b0d2757f263d7dd52f89"
+    },
+    "1514740158491": {
+      "events": {},
+      "links": {},
+      "address": "0xa2c1a8c13f44841d5c3bd905655b1716f0cfc2a3"
+    },
+    "1514758149288": {
+      "events": {},
+      "links": {},
+      "address": "0xa2c1a8c13f44841d5c3bd905655b1716f0cfc2a3"
+    }
+  },
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2017-12-31T22:14:32.654Z"
+}

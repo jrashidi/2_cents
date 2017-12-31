@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Cents</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div id="article">
+        <div class="row-lg-12">
+          <strong>Title</strong><span id="article-title"></span><br>
+          <strong>Genre</strong><span id='article-genre'></span><br>
+          <strong>Read Me</strong><span id='article-body'></span>
+          <span id="article-body"></span><br>
+        </div>
+      </div>
+
+      <!-- How a user will upload an essay -->
+      <div id="upload">
+        <div class="row-lg-12">
+          <form class="upload-article" action="index.html" method="post">
+            <input type="file" name="photo" id="photo"><br>
+            Title:<br>
+            <input type="text" name="title">
+            <br>
+            Genre:<br>
+            <input type="text" name="genre">
+            <br>
+            Write Something Worth Reading:<br>
+            <textarea name="body" rows="8" cols="80"></textarea>
+            <br>
+            <button type="button" name="button" onclick="upload()"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/article.js"></script>
+  </body>
+</html>
